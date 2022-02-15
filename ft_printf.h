@@ -6,16 +6,19 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 13:40:32 by ankasamanya       #+#    #+#             */
-/*   Updated: 2022/02/15 13:32:15 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/02/15 16:24:24 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef   LIBFT_H
-# define   LIBFT_H
-# include <stdarg.h>
+#ifndef FT_PRINTF_H
+
+# define FT_PRINTF_H
+
 # include <unistd.h>
 
-int	ft_printf(const char *, ...);
+# include <stdarg.h>
+
+int	ft_printf(const char *stringy, ...);
 int	ft_putchar(char c);
 int	ft_putstr(const char *s);
 int	ft_putnbr(int n);
