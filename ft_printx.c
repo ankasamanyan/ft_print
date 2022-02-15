@@ -6,20 +6,21 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 16:44:35 by ankasamanya       #+#    #+#             */
-/*   Updated: 2022/02/14 15:41:47 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/02/14 16:50:07 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void ft_puthex(unsigned long long num, int upper)
+static void	ft_puthex(unsigned long long num, int upper)
 {
 	if (num >= 16)
 	{
 		ft_printx(num / 16, upper);
 		ft_printx(num % 16, upper);
 	}
-	else {
+	else
+	{
 		if (num < 10)
 			ft_putnbr(num);
 		else
@@ -30,12 +31,12 @@ static void ft_puthex(unsigned long long num, int upper)
 				ft_putchar('A' + num - 10);
 		}
 	}
-	
 }
+
 int	ft_printx(unsigned long long num, int upper)
 {
-	if(num == 0)
-		return(write(1, "0",1));
+	if (num == 0)
+		return (write(1, "0", 1));
 	else
 		ft_puthex(num, upper);
 	return (ft_counthex(num));

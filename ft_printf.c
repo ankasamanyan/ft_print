@@ -6,11 +6,35 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 13:40:48 by ankasamanya       #+#    #+#             */
-/*   Updated: 2022/02/14 15:54:55 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/02/15 15:49:19 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static int	ft_check(char str, va_list *args)
+{
+	int	count;
+
+	count = 0;
+	if (str == '%')
+		count += ft_putchar('%');
+	if (str == 'c')
+		count += ft_putchar(va_arg(*args, int));
+	if (str == 's')
+		count += ft_putstr(va_arg(*args, char *));
+	if (str == 'i' || str == 'd')
+		count += ft_putnbr(va_arg(*args, int));
+	if (str == 'u')
+		count += ft_printu(va_arg(*args, unsigned int));
+	if (str == 'x')
+		count += ft_printx(va_arg(*args, unsigned int), 0);
+	if (str == 'X')
+		count += ft_printx(va_arg(*args, unsigned int), 1);
+	if (str == 'p')
+		count += ft_printp(va_arg(*args, void *));
+	return (count);
+}
 
 int	ft_printf(const char *stringy, ...)
 {
@@ -25,22 +49,7 @@ int	ft_printf(const char *stringy, ...)
 	{
 		if (stringy[i] == '%')
 		{
-			if (stringy[i + 1] == '%')
-				count += ft_putchar('%');
-			else if(stringy[i + 1] == 'c')
-				count += ft_putchar(va_arg(args, int));
-			else if (stringy[i + 1] == 's')
-				count += ft_putstr(va_arg(args, char *));
-			else if (stringy[i + 1] == 'i' || stringy[i + 1] == 'd')
-				count += ft_putnbr(va_arg(args, int));
-			else if (stringy[i + 1] == 'u')
-				count += ft_printu(va_arg(args, unsigned int));
-			else if (stringy[i + 1] == 'x')
-				count += ft_printx(va_arg(args, unsigned int), 0);
-			else if (stringy[i + 1] == 'X')
-				count += ft_printx(va_arg(args, unsigned int), 1);
-			else if (stringy[i + 1] == 'p')
-				count += ft_printp(va_arg(args, void *));
+			count += ft_check(stringy[i + 1], &args);
 			i += 2;
 		}
 		else
