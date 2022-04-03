@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   printnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,28 +12,28 @@
 
 #include "ft_printf.h"
 
-int	ft_putnbr(int n)
+int	printnbr(int n)
 {
 	int		count;
 	char	c;
 
-	count = ft_intlen(n);
+	count = intlen(n);
 	if (n == -2147483648)
-		ft_putstr("-2147483648");
+		printstr("-2147483648");
 	else if (n < 0)
 	{
-		ft_putchar('-');
+		printchar('-');
 		n *= -1;
 	}
 	if (n >= 10)
 	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
+		printnbr(n / 10);
+		printnbr(n % 10);
 	}
 	else if (n < 10 && n != -2147483648)
 	{
 		c = n + '0';
-		ft_putchar(c);
+		printchar(c);
 	}
 	return (count);
 }

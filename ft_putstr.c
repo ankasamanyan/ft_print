@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   printstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_putstr(const char *s)
+int	printstr(const char *s)
 {
 	int	count;
 
@@ -21,7 +21,7 @@ int	ft_putstr(const char *s)
 		return (write(1, "(null)", 6));
 	while (*s)
 	{
-		ft_putchar(*s++);
+		printchar(*s++);
 		count++;
 	}
 	return (count);

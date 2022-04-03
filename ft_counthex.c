@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_counthex.c                                      :+:      :+:    :+:   */
+/*   counthex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:29:02 by ankasamanya       #+#    #+#             */
-/*   Updated: 2022/02/14 15:46:04 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/03/29 21:00:20 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_counthex(unsigned long long num)
+#include "ft_printf.h"
+
+int	counthex(unsigned long long num)
 {
 	unsigned long long	i;
 
