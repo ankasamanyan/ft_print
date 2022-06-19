@@ -3,4 +3,5 @@
 Recoded printf function in C.
 
 
-![sticker_catto](https://user-images.githubusercontent.com/89840461/174455972-703e7fc3-e5be-4d24-bf1d-4bcd2bd24701.png)
+![catto](https://user-images.githubusercontent.com/89840461/174483405-70f06221-93a4-495f-aa98-5d1f656659e5.png)
+
